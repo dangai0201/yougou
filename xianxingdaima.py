@@ -128,6 +128,11 @@ import os
 # adb logcat "*:<level>"
 # eg:adb logcat "*:E"
 
+#统计冷启动app的时间
+# adb shell am start -W -S 包名/activity
+#eg:adb shell am start -W -S com.yougou/.IndexActivity
+#热启动
+# adb shell am start -W 包名/activity
 
 
 #查看设备所有第三方应用包名
@@ -140,24 +145,35 @@ import os
 # adb shell am force-stop com.yougou"
 
 
-#统计冷启动app的时间
-# adb shell am start -W -S 包名/activity
+# 查看cpu占用
+# adb shell dumpsys cpuinfo |grep 包名
 
-#查看实时资源占用情况
+#查看实时内存资源占用情况
 # adb shell top
 
-
+# 查看指定应用的内存信息
 #adb shell dumpsys meminfo com.package.name
-#  查看指定应用的内存信息
-
 
 #查看gpu
 # adb shell dumpsys gfxinfo 包名
 
 
 
-os.system("adb shell am start -W -S com.yougou/.IndexActivity")
-out1=os.popen("adb shell am start -W -S com.yougou/.IndexActivity").read()
+#查看指定app的pid
+# adb shell ps | grep 包名
+
+#根据pid查询流量
+#adb shell cat /proc/PID/net/dev
+
+
+#耗电量
+# adb shell dumpsys battery
+
+
+#指定app的耗电量
+# adb shell dumpsys batterystats |grep "包名"
+os.system("adb shell dumpsys batterystats |grep com.yougou")
+out1=os.popen("adb shell dumpsys batterystats |grep com.yougou").read()
 print out1
 
 
