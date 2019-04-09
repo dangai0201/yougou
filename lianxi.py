@@ -45,6 +45,12 @@ i=0
 while i <3:
     driver.find_element_by_id("com.yougou:id/login").click()
     i+=1
+
+
+
+
+
+
     toast_loc = (By.XPATH, ".//*[contains(@text,'请输入3-25位密码')]")
 
     WebDriverWait(driver, 30, 0.1).until(EC.presence_of_element_located(toast_loc))
