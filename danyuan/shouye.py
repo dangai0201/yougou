@@ -6,6 +6,8 @@ import unittest
 from fz.qidong import Qidong
 from fz.shoushicaozuo import Shoushi
 from log.logfz import Log
+from baogao.baogao import Baogao
+from youjian.youjian import fasongyoujian
 
 from selenium import webdriver
 import  time
@@ -25,25 +27,26 @@ class  Denglu(unittest.TestCase):
         pass
     @classmethod
     def tearDownClass(self):
+
         pass
 
 
 
-    # def test_001(self):
-    #     self.driver.find_element_by_id("com.yougou:id/iv_101").click()
-    #     time.sleep(2)
-    #     a=self.driver.current_activity
-    #     print a
-    #     self.assertEqual(".activity.AHomeSecendActivity",a)
-    #     pass
-    # def test_002(self):
-    #     self.driver.back()
-    #     self.driver.find_element_by_id("com.yougou:id/imageView1").click()
-    #     a1=self.driver.current_activity
-    #     print a1
-    #     self.assertEqual(".activity.Html5Activity",a1)
-    #     self.driver.find_element_by_id("signEvent").click()
-    #     pass
+    def test_001(self):
+        self.driver.find_element_by_id("com.yougou:id/iv_101").click()
+        time.sleep(2)
+        a=self.driver.current_activity
+        print a
+        self.assertEqual(".activity.AHomeSecendActivity",a)
+        pass
+    def test_002(self):
+        self.driver.back()
+        self.driver.find_element_by_id("com.yougou:id/imageView1").click()
+        a1=self.driver.current_activity
+        print a1
+        self.assertEqual(".activity.Html5Activity",a1)
+        self.driver.find_element_by_id("signEvent").click()
+        pass
     # def test_003(self):
     #     #self.driver.find_element_by_id("com.yougou:id/textBack").click()
     #     Log().info(u"开始滑动")
@@ -57,9 +60,9 @@ class  Denglu(unittest.TestCase):
     #     print a
     #     self.assertEqual(".activity.CNewProductDetails",a)
     #     pass
-    def test_004(self):
-        #下拉刷新方法
-        Shoushi().swipe_down(1)
+    # def test_004(self):
+    #     #下拉刷新方法
+    #     Shoushi().swipe_down(1)
 
 
 
@@ -84,6 +87,10 @@ class  Denglu(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    # unittest.main()
+    Baogao().getbaogao(u"", u"优购", u"移动端首页",unittest.makeSuite(Denglu))
+
+
+
 
 
