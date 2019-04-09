@@ -55,22 +55,21 @@ class Shoushi():
         return self.driver.current_activity
 
     #获取toast
-
-    def toast_text(self, text):
-
-        try:
-
-            toast_loc = (By.XPATH, "//*[contains(@text,'" + text + "')]")
-
-            ele = WebDriverWait(self.driver, 10, 0.1).until(EC.presence_of_element_located(toast_loc))
-
-            print(ele.text)
-
-            return ele.text
-
-        except:
-
-            return None
+    # def toast_text(self, text):
+    #
+    #     try:
+    #
+    #         toast_loc = (By.XPATH, "//*[contains(@text,'" + text + "')]")
+    #
+    #         ele = WebDriverWait(self.driver, 10, 0.01).until(EC.presence_of_element_located(toast_loc))
+    #
+    #         print(ele.text)
+    #
+    #         return ele.text
+    #
+    #     except:
+    #
+    #         return None
 
 
 

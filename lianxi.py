@@ -19,7 +19,7 @@ driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", shouji)
 
 
 
-#点击坐标
+#点击我的坐标
 time.sleep(5)
 driver.tap([(864,1668),(1080,1794)],100)
 time.sleep(2)

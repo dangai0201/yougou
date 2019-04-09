@@ -5,7 +5,7 @@ import unittest
 
 from fz.qidong import Qidong
 from fz.shoushicaozuo import Shoushi
-from log.lianxi456 import Log
+from log.logfz import Log
 
 from selenium import webdriver
 import  time
