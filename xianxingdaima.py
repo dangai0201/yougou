@@ -179,7 +179,7 @@ import os
 
 
 
-mingcheng=os.popen("adb devices -l").readlines()
+# mingcheng=os.popen("adb devices -l").readlines()
 
 # for tmp in mingcheng:
 #     #readlines第一个列表
@@ -194,8 +194,31 @@ mingcheng=os.popen("adb devices -l").readlines()
 #                 c=b.split(":")[1]
 #                 print c
 
-mingcheng1=mingcheng[1].split(" ")[0]
-print mingcheng1
+# mingcheng1=mingcheng[1].split(" ")[0]
+# print mingcheng1
+
+#查询pid
+# aa=os.popen("adb shell ps | grep com.yougou").readlines()
+# print type(aa)
+# pid=aa[1].split(" ")[8]
+# print pid
+
+#冷启动
+#获取ThisTime,TotalTime,WaitTime
+aa=os.popen("adb shell am start -W -S com.yougou/.IndexActivity").readlines()
+print aa
+c=aa[4]
+c1=aa[5]
+c2=aa[6]
+print c,c1,c2
+
+
+
+
+
+
+
+
 
 
 
