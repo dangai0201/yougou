@@ -4,9 +4,10 @@ import time
 from appium.webdriver.common.touch_action import TouchAction
 from fz.shoushicaozuo import Shoushi
 from  fz.jietu import Jietu
-from log.lianxi123 import Logger
-from selenium.webdriver.support.ui import WebDriverWait
 import os
+
+
+
 
 
 
@@ -172,9 +173,36 @@ import os
 
 #指定app的耗电量
 # adb shell dumpsys batterystats |grep "包名"
-os.system("adb shell dumpsys batterystats |grep com.yougou")
-out1=os.popen("adb shell dumpsys batterystats |grep com.yougou").read()
-print out1
+# os.system("adb shell dumpsys batterystats |grep com.yougou")
+# out1=os.popen("adb shell dumpsys batterystats |grep com.yougou").read()
+# print out1
+
+
+
+mingcheng=os.popen("adb devices -l").readlines()
+
+# for tmp in mingcheng:
+#     #readlines第一个列表
+#     if "model" in tmp:
+#         print("model",tmp)
+#         a=tmp.split(" ")
+#         #使用split方法切割字符串生成的第二个列表
+#         print(a)
+#         for b in a:
+#             if "device:" in b:
+#                 # print (b.split(":")[1])
+#                 c=b.split(":")[1]
+#                 print c
+
+mingcheng1=mingcheng[1].split(" ")[0]
+print mingcheng1
+
+
+
+
+
+
+
 
 
 
