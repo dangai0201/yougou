@@ -10,10 +10,12 @@ class Xingneng():
     # def getlengqidong(self,Time):
     def getlengqidong(self):
         a=os.popen("adb shell am start -W -S "+self.packagename+"/"+self.activity).readlines()
+        print type(a[4]),a[5],a[6]
         return a[4],a[5],a[6]
         # for tmp in a:
         #     if Time in tmp:
         #         print tmp.split(":")[1]
+
 
     def getreqidong(self,Time):
         os.popen("adb shell am start -W -S " + self.packagename + "/" + self.activity).readlines()
@@ -25,6 +27,8 @@ class Xingneng():
         for tmp in a:
             if Time in tmp:
                 return tmp.split(":")[1]
+
+
     def getCpu(self):
         a=os.popen("adb shell dumpsys cpuinfo|grep "+self.packagename).readlines()
         for tmp in a:
@@ -38,11 +42,11 @@ class Xingneng():
 
 
 
-i=1
-while  i<8:
-    print "getMen" + Xingneng().getMen()
-    print "getCpu"+"  "+Xingneng().getCpu()
-    i += 1
+# i=1
+# while  i<8:
+#     print "getMen" + Xingneng().getMen()
+#     print "getCpu"+"  "+Xingneng().getCpu()
+#     i += 1
 
 
 
@@ -54,7 +58,7 @@ while  i<8:
 # print "getCpu"+"  "+Xingneng().getCpu()
 
 
-# print Xingneng().getlengqidong()
+print str(Xingneng().getlengqidong())
 
 
 
