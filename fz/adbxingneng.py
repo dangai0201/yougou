@@ -10,7 +10,8 @@ class Xingneng():
     # def getlengqidong(self,Time):
     def getlengqidong(self):
         a=os.popen("adb shell am start -W -S "+self.packagename+"/"+self.activity).readlines()
-        print type(a[4]),a[5],a[6]
+        print type(a[4])
+        print a[4],a[5],a[6]
         return a[4],a[5],a[6]
         # for tmp in a:
         #     if Time in tmp:
@@ -40,6 +41,10 @@ class Xingneng():
         b=a[0].split(":")[0]
         return b
 
+print Xingneng().getlengqidong()
+
+
+
 
 
 # i=1
@@ -57,8 +62,6 @@ class Xingneng():
 #
 # print "getCpu"+"  "+Xingneng().getCpu()
 
-
-print str(Xingneng().getlengqidong())
 
 
 
